@@ -23,4 +23,8 @@ console.log(typeof b)
 // *********************Operations*****************
 
 console.log('Operations output\n')
+console.log("1" + 2+ 2)
+console.log(1+ '2' + 2)
+
+console.log(+true) // 1 b/c we have converted 
 
