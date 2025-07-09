@@ -1,2 +1,2 @@
-A file for saving all my JS work
+A repo for JS related work <br>
 Hopefully I'll learn something :)
