@@ -9,8 +9,8 @@ const copyDeep = [...myArr] // because each value is copied and spread into a ne
 
 copyShallow[0] = 2 
 copyDeep[0] = 4
-console.log(copyShallow, myArr) //[ 2, 5, 7 ] [ 2, 5, 7 ]
-console.log(copyDeep, myArr)  // [ 4, 5, 7 ] [ 2, 5, 7 ]
+// console.log(copyShallow, myArr) //[ 2, 5, 7 ] [ 2, 5, 7 ]
+// console.log(copyDeep, myArr)  // [ 4, 5, 7 ] [ 2, 5, 7 ]
 
 const fruits = ['mango', 'apple', 'orange']
 
@@ -37,13 +37,42 @@ fruits.shift()
 
 //slice and splice  
 // slice: takes a slice from the original array but doesnot change the OG array
-console.log('A', fruits)
+// console.log('A', fruits)
 const newFruits = fruits.slice(0, 2)
-console.log(newFruits)
-console.log('B', fruits)
+// console.log(newFruits)
+// console.log('B', fruits)
 
 // splice : takes a slice and chnages the OG array by taking out the slice
 
 const newFruits2 = fruits.splice(0, 2)
-console.log(newFruits2)
-console.log('C', fruits)
+// console.log(newFruits2)
+// console.log('C', fruits)
+
+
+// +++++++++++++++++ MORE ABOUT ARRAYS +++++++++++++++++
+
+const veg  = ['spanich', 'potato', 'tomato']
+
+// In JavaScript, arrays are mutable, meaning that their contents can be changed without creating a new array. Methods like push, pop, shift, and splice can modify the array in place.
+
+// console.log(veg);
+// // veg.push(fruits)
+// // console.log(veg) // pushes the fruits array as an object 
+// console.log(veg.concat(fruits)) // merges them into a single array
+// console.log(veg) // OG array is not changed
+
+// spread operator 
+// preferred in palace of concat 
+
+const newfoodArr = [...veg, ...fruits]
+// console.log(newfoodArr)
+
+const numarr = [1,2,3, [4,5,6,[6,5,4]], 4, [7,8]]
+console.log(numarr.flat(2)) // define depth or give infinity 
+
+console.log(Array.isArray('Raafia'))
+console.log(Array.from('Raafia'))
+console.log(Array.from({name : 'Raafia'})) // interesting case 
+
+console.log(Array.of(100,200,300))
+
