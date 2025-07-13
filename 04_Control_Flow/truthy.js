@@ -36,6 +36,7 @@ console.log(userAge);
 let val1 = 5 ?? 10; // gives 5
 let val2 = null ?? 3; // gives 3 b/c we dont need null
 let val3 = null ?? 10 ?? 20; // gives the first value that it finds, usually used when making database connections, we dont need null values b/c they can cause errors 
+// usually we would see functions rather than actual value 
 
 console.log(val1, val2, val3)
 
