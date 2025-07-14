@@ -62,3 +62,12 @@ userBooks = books.filter((bk) => {
     return (bk.publish >= 1920 && bk.genre === 'Novel')
 } )
 console.log(userBooks)
+
+// maps -> in reduce.js file 
+
+// add 10 to muNums using foreach 
+let add10 = []
+myNums.forEach((num) => {
+    add10.push(num + 10)
+})
+console.log(add10)
