@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    </style>
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent)
+    // console.log(parent.children) // gives an HTML collection 
+    // console.log(parent.children[0].innerHTML) 
+
+    for (let i = 0; i < parent.children.length; i++) {
+        // console.log(parent.children[i].innerHTML)
+        if(i%2 == 0){
+            parent.children[i].style.color = 'blue';
+        }
+        else{
+            parent.children[i].style.color = 'orange'
+        }
+    }
+
+    // parent.children[1].style.color = 'orange'
+
+    //  this moves us from the parent to child
+    // console.log(parent.firstElementChild) // used for getting the first element of a parent, used when we dont bother going fully inside the parent 
+    // console.log(parent.lastElementChild.innerHTML)
+
+    // now we move from child to parent
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne) // get Monday -> first day class element 
+    // console.log(dayOne.parentElement) // tracking parent
+
+    //console.log(dayOne.nextElementSibling) // selects the next element in the list
+
+    console.log('Nodes : ', parent.childNodes)
+</script>
+</html>
