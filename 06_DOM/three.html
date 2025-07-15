@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chair ur Code</title>
+  </head>
+  <body style="background-color: #212121; color: aliceblue"></body>
+  <script>
+    // create an elemet into the [page]
+
+    const div = document.createElement("div"); //element created
+    console.log(div);
+    div.className = "main";
+    div.id = Math.round(Math.random() * 10 + 1);
+    // some attributes are common and can be accessed through dot method, while others need to be set through setAttribute function
+
+    div.setAttribute("title", "chai"); // takes key-value pairs
+    // giving some styles
+    div.style.backgroundColor = "green";
+    div.style.padding = "10px";
+    div.style.borderRadius = "10px";
+
+    // now we need to attach the element onto the document for it to actually display 
+    // OPTIMIZATION: dot method causes the dom to go and take the value, even when it is nothing and then set it, while setAttribute doesnot make that trip and directly sets the value, thus making it more optimized and saving a round trip
+
+    // div.innerText = 'RAAFIA FATIMA'
+    // alternate method to div.innertext
+    const addtext = document.createTextNode('Chai ur Code')
+    div.appendChild(addtext)
+
+    document.body.appendChild(div)
+
+    // create a function to create a div, make a loop to make multiple divs of varaying colour thus you can make any elements on the webpage 
+  </script>
+</html>
