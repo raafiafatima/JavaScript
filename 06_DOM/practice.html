@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Practice</title>
+</head>
+<body style="background-color: #212121; color: aliceblue">
+    
+</body>
+<!-- practice making DOM elements -->
+<script>
+    function makeDiv(text, color) {
+        let div = document.createElement('div')
+        div.className = 'div'
+        div.id = 'main'
+        div.style.backgroundColor = color
+        div.style.padding = '15px'
+        div.innerText = text
+        return div 
+    }
+
+    let colours = ['green', 'red', 'blue', 'yellow', 'orange']
+    let metaText = 'Raafia Fatima'
+
+    for (let i = 0; i < colours.length; i++) {
+        let div = makeDiv(metaText, colours[i])
+        document.body.appendChild(div)
+    }
+
+    let textArray = ['raafia', 'hafsa', 'javaria', 'hania', 'fareya']
+
+    function makeH1(text) {
+        let h1 = document.createElement('h1')
+        h1.textContent = text
+        h1.style.color = 'white'
+        h1.style.padding = '15px'
+        return h1
+    }
+
+    for (let i = 0; i < textArray.length; i++) {
+        let h1 = makeH1(textArray[i])
+        document.body.appendChild(h1)
+    }
+</script>
+</html>
