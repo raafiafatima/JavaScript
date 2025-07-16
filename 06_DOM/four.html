@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chair ur Code</title>
+  </head>
+  <body style="background-color: #212121; color: aliceblue">
+    <ul class="language">
+      <li>JavaScript</li>
+    </ul>
+  </body>
+  <script>
+    // Adding a Value 
+
+    function addLang(langName) {
+      // create list item and then add text and attach
+      let li = document.createElement("li");
+      li.innerHTML = langName;
+
+      const parent = document.querySelector(".language");
+      parent.appendChild(li);
+    }
+    addLang("Python");
+    addLang("Ruby");
+
+    // problem with this fuction: the dom has to traverse the whole tree and can be less optimized
+
+    // optimized way of adding a value 
+    function addOptiLang(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName)); // creating a textnode and adding to the list item via append child, HENCE having a more optmized approach
+
+      document.querySelector(".language").appendChild(li);
+
+      // more optimized approach because we are not traversing the tree and directly making the elements and adding to the page
+    }
+    addOptiLang("GoLang");
+
+    // Editing a value 
+    let secondLang = document.querySelector('li:nth-child(2)')
+    // secondLang.innerHTML = 'Mojo' // not optimized because it will have to traverse the tree 
+
+    // instead lets create an element and add to it 
+    let newLi = document.createElement('li')
+    newLi.textContent = 'Mojo'
+    secondLang.replaceWith(newLi) //method to replace elements 
+
+    //Edit example 2 
+    // edit first and replace with typescript
+
+    let first = document.querySelector('li:nth-child(1)')
+    first.outerHTML = '<li>TypeScript</li>' // another method to chnage element 
+    // let newli = document.createElement('li')
+    // newli.textContent = 'Typescript'
+    // first.replaceWith(newli)
+
+    // remove element 
+
+    const lastLang = document.querySelector('li:last-child') // select any element and simply remove it 
+    lastLang.remove()
+  </script>
+</html>
