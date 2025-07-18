@@ -14,13 +14,13 @@ allButton.forEach((item) => {
     let buttonId = e.target.id;
 
     if (buttonId === "grey") {
-      body.style.backgroundColor = "grey";
+      body.style.backgroundColor = buttonId;
     } else if (buttonId === "white") {
-      body.style.backgroundColor = "white";
+      body.style.backgroundColor = buttonId;
     } else if (buttonId === "blue") {
-      body.style.backgroundColor = "blue";
+      body.style.backgroundColor = buttonId;
     } else {
-      body.style.backgroundColor = "yellow";
+      body.style.backgroundColor = buttonId;
     }
   });
 });
