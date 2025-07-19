@@ -1,0 +1,83 @@
+<!-- xml https request  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .card {
+        background-color: rgb(10, 5, 5);
+        width: 250px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 20px;
+      }
+
+      .card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+
+      .name {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .followers {
+        color: gray;
+        font-size: 0.95em;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #212121; color: whitesmoke">
+    <div class="card">
+      <div class="name"></div>
+      <div class="followers"></div>
+    </div>
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest(); // an object of class xmlhttps
+    let data;
+    xhr.open("GET", requestUrl); // this only makes the request from the user
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        data = JSON.parse(this.responseText); // always comes as a string thus we make it into the object, use JSON.parse to make into an object
+        console.log(data);
+        const card = document.querySelector(".card");
+        let img = document.createElement("img");
+        img.src = data.avatar_url;
+        card.appendChild(img);
+
+        document.querySelector(".name").innerHTML = `<span>${data.name}</span>`;
+        document.querySelector(
+          ".followers"
+        ).innerHTML = `<span> Followers: ${data.followers}</span>`;
+      }
+    }; // shows the state
+    xhr.send(); // this sends the request that helps us actually get data back
+
+    //_________________V8 ENGINE AND CONSOLE_____________
+
+    // Runtime Environment: 	The place where code runs (e.g., browser, Node.js)
+    // Built-in API: 	System functions you can use from the runtime (like console.log)
+    // Web API: 	External services you fetch data from over the network
+  </script>
+</html>
