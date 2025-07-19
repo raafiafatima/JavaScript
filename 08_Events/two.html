@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai ur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<!-- script for the page -->
+<script>
+    const sayRaafia = function () {
+        console.log('Raafia')
+    }
+
+    const sayText = function () {
+        document.querySelector('h1').innerHTML = 'Best JS Series'
+    }
+    // setTimeout(handler => basically a callback function, function => what to do? )
+    const change = setTimeout(sayText, 2000) // gives only a timeout and executes once 
+    // set interval keeps doing the thing continuously 
+    // clearTimeout() // needs a reference to find what timeout to stop
+
+    document.getElementById('stop').addEventListener('click', function () {
+        clearTimeout(change)
+    })
+</script>
+</html>
