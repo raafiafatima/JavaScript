@@ -15,8 +15,17 @@
     const sayDate = function(str) {
         console.log(str, Date.now())
     }
-    const intervalId = setInterval(sayDate, 1000 ,'hi' ) // also takes parameters in the end 
+    let intervalId 
 
-    clearInterval(intervalId)
+    // to start the work
+    document.querySelector('.start').addEventListener('click', function () {
+        intervalId = setInterval(sayDate, 1000 ,'hi' ) // can take parameter in the end 
+    })
+
+    // to stop the work
+    document.querySelector('.stop').addEventListener('click', function() {
+        clearInterval(intervalId)
+    })
+    
 </script>
 </html>
