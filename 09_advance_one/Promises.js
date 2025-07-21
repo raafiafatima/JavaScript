@@ -121,4 +121,11 @@ fetch('https://jsonplaceholder.typicode.com/users/1')
     console.log(error)
 })
 
+// Interview Question : if we get a 404 error from the response would it be in resolve or reject? 
+// Ans: It would be in resolve because reject only works when the request was not completed or it encounters a network error and not an HTTP error, here the request was completed but the response was an error 
+
+
+// fetch has a high priority queue called micro task queue that always gets executed first, thus thats why fetch gets executed first and we get data first then the next things 
+
+// fetch can also get more data in the form of options 
 
