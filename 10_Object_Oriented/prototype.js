@@ -71,3 +71,4 @@ String.prototype.trueLength = function(){
 }
 
 myString.trueLength()
+'myLove     '.trueLength()
