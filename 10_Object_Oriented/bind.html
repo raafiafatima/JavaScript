@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+  </head>
+  <body>
+    <button>Button Clicked</button>
+  </body>
+  <script>
+    class React {
+      constructor() {
+        this.library = "react";
+        this.server = "https://localhost:3000";
+        // req: once the object is made we need a reference of the button
+
+        document
+          .querySelector("button")
+          .addEventListener("click", this.handleClick.bind(this));
+      } // Here, when the button is clicked, handleClick runs, but this no longer refers to the class object — it refers to the button itself.
+      // So people needed a way to force the function to remember the right this, and that’s where .bind(this) came in.
+      // This creates a new function, where this is permanently set to the instance of the React class.
+      // So even when the browser calls the function because the button was clicked, it will still use your original this.
+      //   .bind(this) is like saying:
+
+      // "No matter who calls this function, always act like you're inside this class.
+      handleClick() {
+        console.log("button clicked");
+        console.log(this.server);
+      }
+    }
+
+    const app = new React();
+  </script>
+</html>
