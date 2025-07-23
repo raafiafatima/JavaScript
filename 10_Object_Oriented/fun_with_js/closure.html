@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #313131">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+  <script>
+    // function init() {
+    //   let name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   displayName();
+    // }
+    // init();
+
+    // lexical scoping
+    // function outer(){
+    //     let user = 'raafia'
+    //     function inner(){
+    //         let secret = '321'
+    //         console.log('INNER', user)
+    //     }
+    //     inner()
+    // }
+    // outer()
+    // console.log('OUTER',user) // not works because outside the scope
+
+    // closure basically means that when we return a function, we not only return its scope but its lexical scope meaning all the important variables and consts that are part of the function and needed for its execution
+
+    // function makeFun(){
+    //     let name = 'mozilla'
+    //     function display() {
+    //         console.log(name)
+    //     }
+    //     return display
+    // }
+    // let fun = makeFun()
+    // fun()
+  </script>
+  <script>
+    // document.getElementById("orange").onclick = function () {
+    //   document.body.style.backgroundColor = "orange";
+    // };
+
+    //  document.getElementById("green").onclick = function () {
+    //   document.body.style.backgroundColor = "green";
+    // };
+    function clickHnadlers(color){
+        // document.body.style.backgroundColor = color;
+
+        return function(){
+            document.body.style.backgroundColor = color;
+        }
+    }
+    document.getElementById("orange").onclick = clickHnadlers('orange') // gets executed immediately and causes errors because we have to pass a function and not execute it , evn if we pass a reference, it doesnot work 
+
+    // once we make a return function it passes a function onto the onClick event and only gets executed once the button is clicked 
+    
+  </script>
+</html>
